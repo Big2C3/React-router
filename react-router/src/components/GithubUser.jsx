@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
-export default function GithubUser({ username }) {
+export default function GithubUser() {
+    const { username } = useParams();
     const [user, setUser] = useState(null);
 
     useEffect(() => {

@@ -3,6 +3,8 @@ import { Counter } from "./components/Counter";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
 import GithubUsers from "./pages/GithubUsers";
+import GithubUser from "./components/GithubUser";
+import GithubUserList from "./pages/GithubUserList";
 
 function App() {
   return (
@@ -14,7 +16,9 @@ function App() {
         <Route />
         <Route path="/" element={<Home />} />
         <Route path="/counter" element={<Counter />} />
-        <Route path="/users/*" element={<GithubUsers />} />
+        <Route path="/users" element={<GithubUserList />} >
+          <Route path="/users/:username" element={<GithubUser />} />
+        </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>
